@@ -1,0 +1,12 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("ELECTRIC_DATABASE_URL")
+}
+
+// Such test. Much original. Wow.
+model Todo {
+  id    String    @id() @default(uuid())
+  
+  title String
+  done  Boolean
+}

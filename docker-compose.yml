@@ -1,0 +1,17 @@
+version: "3.8"
+
+services:
+  electric:
+    image: electricsql/electric:canary
+    ports:
+      - "5133:5133"
+      - "5433:5433"
+      - "65432:65432"
+    environment:
+      - AUTH_MODE=secure
+      - AUTH_JWT_ALG=ES512
+      - AUTH_JWT_KEY=${AUTH_JWT_KEY}
+      - DATABASE_URL=${DATABASE_URL}
+      - DATABASE_REQUIRE_SSL=true
+      - ELECTRIC_WRITE_TO_PG_MODE=direct_writes
+      - PG_PROXY_PASSWORD=${PG_PROXY_PASSWORD}

@@ -6,12 +6,18 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prebuild": "npx electric-sql generate",
+    "db:migrate:create": "npx prisma migrate dev --create-only --schema ./database/schema.prisma",
+    "db:migrate:deploy": "npx prisma migrate deploy --schema ./database/schema.prisma",
+    "db:migrate:mark-as-rolled-back": "npx prisma migrate resolve --schema ./database/schema.prisma --rolled-back ",
+    "db:generate": "dotenv -e .env -- npx electric-sql generate --proxy postgresql://postgres:$PG_PROXY_PASSWORD@localhost:65432/postgres"
   },
   "dependencies": {
     "@radix-ui/react-icons": "^1.3.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "electric-sql": "^0.12.1",
     "next": "14.2.4",
     "react": "^18",
     "react-dom": "^18",

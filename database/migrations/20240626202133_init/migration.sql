@@ -1,0 +1,12 @@
+-- CreateTable
+DROP TABLE IF EXISTS "Todo";
+CREATE TABLE IF NOT EXISTS "Todo" (
+    "id" TEXT NOT NULL,
+    "title" TEXT NOT NULL,
+    "done" BOOLEAN NOT NULL,
+
+    CONSTRAINT "Todo_pkey" PRIMARY KEY ("id")
+);
+ALTER TABLE "Todo" OWNER TO postgres;
+ALTER TABLE "Todo" ENABLE ELECTRIC;
+ELECTRIC GRANT ALL ON "Todo" TO ANYONE;
