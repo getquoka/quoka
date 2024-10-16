@@ -1,5 +1,5 @@
-const { fontFamily } = require("tailwindcss/defaultTheme")
- 
+const { fontFamily } = require("tailwindcss/defaultTheme");
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ["class"],
@@ -54,7 +54,7 @@ module.exports = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        sans: ['Fira Code', ...fontFamily.sans],
+        sans: ["Fira Code", ...fontFamily.sans],
       },
       keyframes: {
         "accordion-down": {
@@ -73,4 +73,4 @@ module.exports = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};

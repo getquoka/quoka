@@ -1,37 +1,44 @@
-import { createRootRoute } from '@tanstack/react-router'
-import { Outlet, ScrollRestoration } from '@tanstack/react-router'
-import { Body, Head, Html, Meta, Scripts } from '@tanstack/start'
-import * as React from 'react'
+import { createRootRoute } from "@tanstack/react-router";
+import { Outlet, ScrollRestoration } from "@tanstack/react-router";
+import { Body, Head, Html, Meta, Scripts } from "@tanstack/start";
+import * as React from "react";
 import globalsCss from "app/styles/globals.css?url";
 
 export const Route = createRootRoute({
   meta: () => [
     {
-      charSet: 'utf-8',
+      charSet: "utf-8",
     },
     {
-      name: 'viewport',
-      content: 'width=device-width, initial-scale=1',
+      name: "viewport",
+      content: "width=device-width, initial-scale=1",
     },
     {
-      title: 'Quoka | The cutest data tool',
+      title: "Quoka | The cutest data tool",
     },
   ],
-  component: RootComponent,  
+  component: RootComponent,
   links: () => [
     { rel: "stylesheet", href: globalsCss },
     { rel: "preconnect", href: "https://fonts.googleapis.com" },
-    { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: 'anonymous' },
-    { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" },
+    {
+      rel: "preconnect",
+      href: "https://fonts.gstatic.com",
+      crossOrigin: "anonymous",
+    },
+    {
+      rel: "stylesheet",
+      href: "https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap",
+    },
   ],
-})
+});
 
 function RootComponent() {
   return (
     <RootDocument>
       <Outlet />
     </RootDocument>
-  )
+  );
 }
 
 function RootDocument({ children }: { children: React.ReactNode }) {
@@ -46,5 +53,5 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <Scripts />
       </Body>
     </Html>
-  )
+  );
 }

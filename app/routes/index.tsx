@@ -1,47 +1,49 @@
-import * as fs from 'fs'
-import { createFileRoute, useRouter } from '@tanstack/react-router'
-import { createServerFn } from '@tanstack/start'
-import { Button } from 'components/ui/button'
-import Globe from '~/components/ui/globe'
+import * as fs from "fs";
+import { createFileRoute, useRouter } from "@tanstack/react-router";
+import { createServerFn } from "@tanstack/start";
+import { Button } from "components/ui/button";
+import Globe from "~/components/ui/globe";
 
-const filePath = 'count.txt'
+const filePath = "count.txt";
 
 async function readCount() {
   return parseInt(
-    await fs.promises.readFile(filePath, 'utf-8').catch(() => '0'),
-  )
+    await fs.promises.readFile(filePath, "utf-8").catch(() => "0"),
+  );
 }
 
-const getCount = createServerFn('GET', () => {
-  return readCount()
-})
+const getCount = createServerFn("GET", () => {
+  return readCount();
+});
 
-const updateCount = createServerFn('POST', async (addBy: number) => {
-  const count = await readCount()
-  await fs.promises.writeFile(filePath, `${count + addBy}`)
-})
+const updateCount = createServerFn("POST", async (addBy: number) => {
+  const count = await readCount();
+  await fs.promises.writeFile(filePath, `${count + addBy}`);
+});
 
-export const Route = createFileRoute('/')({
+export const Route = createFileRoute("/")({
   component: Home,
   loader: async () => await getCount(),
-})
+});
 
 function Home() {
-  const router = useRouter()
-  const state = Route.useLoaderData()
+  const router = useRouter();
+  const state = Route.useLoaderData();
+
+  const foo = 1;
 
   return (
     <>
       <Button
         onClick={() => {
           updateCount(1).then(() => {
-            router.invalidate()
-          })
-        }}    
+            router.invalidate();
+          });
+        }}
       >
         Add 1 to {state}?
       </Button>
-      <Globe/>
+      <Globe />
     </>
-  )
+  );
 }
