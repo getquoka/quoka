@@ -30,8 +30,6 @@ function Home() {
   const router = useRouter();
   const state = Route.useLoaderData();
 
-  const foo = 1;
-
   return (
     <>
       <Button
