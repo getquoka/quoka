@@ -18,7 +18,12 @@ export const Route = createRootRoute({
     },
   ],
   component: RootComponent,  
-  links: () => [{ rel: "stylesheet", href: globalsCss }],
+  links: () => [
+    { rel: "stylesheet", href: globalsCss },
+    { rel: "preconnect", href: "https://fonts.googleapis.com" },
+    { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: 'anonymous' },
+    { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap" },
+  ],
 })
 
 function RootComponent() {
