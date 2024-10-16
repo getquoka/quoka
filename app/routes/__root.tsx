@@ -2,6 +2,7 @@ import { createRootRoute } from '@tanstack/react-router'
 import { Outlet, ScrollRestoration } from '@tanstack/react-router'
 import { Body, Head, Html, Meta, Scripts } from '@tanstack/start'
 import * as React from 'react'
+import appCss from "app/styles/app.css?url";
 
 export const Route = createRootRoute({
   meta: () => [
@@ -16,7 +17,8 @@ export const Route = createRootRoute({
       title: 'Quoka | The cutest data tool',
     },
   ],
-  component: RootComponent,
+  component: RootComponent,  
+  links: () => [{ rel: "stylesheet", href: appCss }],
 })
 
 function RootComponent() {
