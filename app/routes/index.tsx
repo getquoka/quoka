@@ -30,6 +30,12 @@ function Home() {
   const router = useRouter();
   const state = Route.useLoaderData();
 
+  const foo = 5;
+
+
+
+  
+
   return (
     <>
       <Button

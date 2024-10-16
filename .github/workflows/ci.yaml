@@ -12,4 +12,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - run: npx prettier . --check
       - run: npx --yes oxlint@0.9.10 --deny-warnings
