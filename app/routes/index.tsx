@@ -30,11 +30,12 @@ function Home() {
 
   return (
     <button
+      className="text-xl"
       onClick={() => {
         updateCount(1).then(() => {
           router.invalidate()
         })
-      }}
+      }}    
     >
       Add 1 to {state}?
     </button>
