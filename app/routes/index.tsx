@@ -32,10 +32,6 @@ function Home() {
 
   const foo = 5;
 
-
-
-  
-
   return (
     <>
       <Button
