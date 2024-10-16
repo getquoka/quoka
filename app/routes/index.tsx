@@ -30,8 +30,6 @@ function Home() {
   const router = useRouter()
   const state = Route.useLoaderData()
 
-  const notUsed = 5
-
   return (
     <>
       <Button
