@@ -1,0 +1,15 @@
+name: CI
+
+on: 
+  pull_request:
+    types:
+      - synchronize
+      - opened
+
+jobs:
+  oxlint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: npx --yes oxlint@0.9.10 --deny-warnings
