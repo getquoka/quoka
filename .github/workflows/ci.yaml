@@ -7,10 +7,15 @@ on:
       - opened
 
 jobs:
-  oxlint:
-    name: Lint
+  pretty:
+    name: Pretty
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - run: npx prettier . --check
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
       - run: npx --yes oxlint@0.9.10 --deny-warnings
