@@ -1,1 +1,2 @@
 npm run prettify
+npm run lint:fix
