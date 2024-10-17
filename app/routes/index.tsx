@@ -7,8 +7,6 @@ import Globe from "~/components/ui/globe";
 const filePath = "count.txt";
 
 async function readCount() {
-  const foo = "bar";
-
   return parseInt(
     await fs.promises.readFile(filePath, "utf-8").catch(() => "0"),
   );
