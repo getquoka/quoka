@@ -9,7 +9,8 @@
     "start": "vinxi start",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky",
-    "prettify": "prettier . --write"
+    "prettify": "prettier . --write",
+    "lint": "oxlint"
   },
   "keywords": [],
   "author": "",
