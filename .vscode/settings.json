@@ -3,12 +3,7 @@
     "**/node_modules/**": true
   },
   "editor.formatOnPaste": true,
-  "editor.formatOnSave": false,
-
-
-
-
-  
+  "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "prettier.configPath": ".prettierrc"
 }
