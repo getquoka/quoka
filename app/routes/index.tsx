@@ -1,8 +1,7 @@
 import * as fs from "fs";
 import { createFileRoute, useRouter } from "@tanstack/react-router";
 import { createServerFn } from "@tanstack/start";
-import { Button } from "components/ui/button";
-import Globe from "~/components/ui/globe";
+import { Button } from "@/components/ui/button";
 
 const filePath = "count.txt";
 
@@ -31,7 +30,7 @@ function Home() {
   const state = Route.useLoaderData();
 
   return (
-    <>
+    <div className="flex items-center justify-center h-full">
       <Button
         onClick={() => {
           updateCount(1).then(() => {
@@ -41,7 +40,6 @@ function Home() {
       >
         Add 1 to {state}?
       </Button>
-      <Globe />
-    </>
+    </div>
   );
 }

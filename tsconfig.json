@@ -8,9 +8,7 @@
     "strictNullChecks": true,
     "baseUrl": ".",
     "paths": {
-      "~/*": ["./*"],
-      "@/*": ["./*"],
-      "app/*": ["./app/*"]
+      "@/*": ["./app/*"]
     }
   }
 }

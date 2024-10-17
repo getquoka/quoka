@@ -2,7 +2,8 @@ import { createRootRoute } from "@tanstack/react-router";
 import { Outlet, ScrollRestoration } from "@tanstack/react-router";
 import { Body, Head, Html, Meta, Scripts } from "@tanstack/start";
 import * as React from "react";
-import globalsCss from "app/styles/globals.css?url";
+import globalsCss from "@/styles/globals.css?url";
+import { QuokaDock } from "@/components/QuokaDock";
 
 export const Route = createRootRoute({
   meta: () => [
@@ -36,7 +37,10 @@ export const Route = createRootRoute({
 function RootComponent() {
   return (
     <RootDocument>
-      <Outlet />
+      <div className="w-screen h-screen">
+        <Outlet />
+        <QuokaDock />
+      </div>
     </RootDocument>
   );
 }
