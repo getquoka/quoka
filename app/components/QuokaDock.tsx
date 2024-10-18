@@ -19,8 +19,6 @@ export type QuokaDockItem = {
 };
 
 export const QuokaDock = () => {
-  console.log("route tree", routeTree);
-
   if (!routeTree.children) return null;
 
   const items = Object.keys(routeTree.children)
