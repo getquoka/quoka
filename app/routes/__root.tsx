@@ -42,7 +42,7 @@ function RootComponent() {
     <RootDocument>
       <div className="w-screen h-screen">
         <Outlet />
-        {/* <QuokaDock /> */}
+        <QuokaDock />
       </div>
     </RootDocument>
   );
