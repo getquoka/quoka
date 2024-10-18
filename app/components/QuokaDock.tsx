@@ -13,7 +13,9 @@ import { cn } from "@/lib/utils";
 import { routeTree } from "@/routeTree.gen";
 
 export type QuokaDockItem = {
+  // TODO: This should be the right type for a route
   href: string;
+
   icon: React.ElementType;
   label: string;
 };
