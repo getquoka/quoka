@@ -3,6 +3,7 @@ import { createFileRoute, useRouter } from "@tanstack/react-router";
 import { createServerFn } from "@tanstack/start";
 import { Button } from "@/components/ui/button";
 import { HomeIcon } from "@radix-ui/react-icons";
+import { supported } from "browser-fs-access";
 
 const filePath = "count.txt";
 
@@ -47,6 +48,10 @@ function Home() {
         }}
       >
         Add 1 to {state}?
+      </Button>
+
+      <Button onClick={() => {}} disabled={!supported}>
+        Open file
       </Button>
     </div>
   );
