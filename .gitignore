@@ -1,5 +1,6 @@
 node_modules
 app.config.timestamp_*.js
+.env*
 
 # TODO: remove, used for Tanstack router's "Hello world"
 count.txt

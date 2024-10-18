@@ -3,6 +3,7 @@ import { createFileRoute, useRouter } from "@tanstack/react-router";
 import { createServerFn } from "@tanstack/start";
 import { Button } from "@/components/ui/button";
 import { HomeIcon } from "@radix-ui/react-icons";
+import { usePostHog } from "posthog-js/react";
 
 const filePath = "count.txt";
 
@@ -34,6 +35,7 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
+  const posthog = usePostHog();
   const router = useRouter();
   const state = Route.useLoaderData();
 
@@ -48,6 +50,7 @@ function Home() {
       >
         Add 1 to {state}?
       </Button>
+      <Button>Other</Button>
     </div>
   );
 }
