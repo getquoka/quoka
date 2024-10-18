@@ -6,6 +6,9 @@ import globalsCss from "@/styles/globals.css?url";
 import { QuokaDock } from "@/components/QuokaDock";
 
 export const Route = createRootRoute({
+  staticData: {
+    dock: null,
+  },
   meta: () => [
     {
       charSet: "utf-8",
