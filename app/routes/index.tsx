@@ -2,6 +2,7 @@ import * as fs from "fs";
 import { createFileRoute, useRouter } from "@tanstack/react-router";
 import { createServerFn } from "@tanstack/start";
 import { Button } from "@/components/ui/button";
+import { HomeIcon } from "@radix-ui/react-icons";
 
 const filePath = "count.txt";
 
@@ -21,6 +22,13 @@ const updateCount = createServerFn("POST", async (addBy: number) => {
 });
 
 export const Route = createFileRoute("/")({
+  staticData: {
+    dock: {
+      href: "/",
+      icon: HomeIcon,
+      label: "Home",
+    },
+  },
   component: Home,
   loader: async () => await getCount(),
 });
