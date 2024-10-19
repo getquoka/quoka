@@ -4,6 +4,7 @@ import { Body, Head, Html, Meta, Scripts } from "@tanstack/start";
 import * as React from "react";
 import globalsCss from "@/styles/globals.css?url";
 import { QuokaDock } from "@/components/QuokaDock";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 export const Route = createRootRoute({
   staticData: {
@@ -38,12 +39,16 @@ export const Route = createRootRoute({
 });
 
 function RootComponent() {
+  const queryClient = new QueryClient();
+
   return (
     <RootDocument>
-      <div className="w-screen h-screen">
-        <Outlet />
-        <QuokaDock />
-      </div>
+      <QueryClientProvider client={queryClient}>
+        <div className="w-screen h-screen">
+          <Outlet />
+          <QuokaDock />
+        </div>
+      </QueryClientProvider>
     </RootDocument>
   );
 }
