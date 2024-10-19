@@ -1,8 +1,7 @@
-import { createFileRoute, useRouter } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { HomeIcon } from "@radix-ui/react-icons";
 import { useFile } from "@/hooks/useFile";
-import { useQuery } from "@tanstack/react-query";
 import { useCount } from "@/hooks/useCount";
 
 export const Route = createFileRoute("/")({
@@ -17,10 +16,8 @@ export const Route = createFileRoute("/")({
 });
 
 function Home() {
-  const router = useRouter();
   const { count, incrementByOne } = useCount();
 
-  const state = Route.useLoaderData();
   const {
     isSupported,
     fileWithHandle,
