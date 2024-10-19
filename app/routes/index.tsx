@@ -49,7 +49,7 @@ function Home() {
 
   return (
     <div className="flex items-center justify-center h-full flex-col gap-3">
-      {/* <Button
+      <Button
         onClick={() => {
           updateCount(1).then(() => {
             router.invalidate();
@@ -57,7 +57,7 @@ function Home() {
         }}
       >
         Add 1 to {state}?
-      </Button> */}
+      </Button>
 
       <Button onClick={open} disabled={!isSupported}>
         Open file
