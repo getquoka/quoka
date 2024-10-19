@@ -37,7 +37,15 @@ export const Route = createFileRoute("/")({
 function Home() {
   const router = useRouter();
   const state = Route.useLoaderData();
-  const { isSupported, fileWithHandle, open, reset } = useFile(["text/csv"]);
+  const {
+    isSupported,
+    fileWithHandle,
+    isLoading,
+    content,
+    reload,
+    open,
+    reset,
+  } = useFile(["text/plain"]);
 
   return (
     <div className="flex items-center justify-center h-full flex-col gap-3">
@@ -54,11 +62,16 @@ function Home() {
       <Button onClick={open} disabled={!isSupported}>
         Open file
       </Button>
-      <Button onClick={reset} disabled={!isSupported}>
+      <Button onClick={reset} disabled={!fileWithHandle}>
         Reset file
+      </Button>
+      <Button onClick={reload} disabled={!fileWithHandle}>
+        Reload content
       </Button>
 
       {fileWithHandle && <p>{fileWithHandle.name}</p>}
+      {fileWithHandle &&
+        (isLoading ? <p>Loading</p> : <p>{content ?? "No content"}</p>)}
     </div>
   );
 }
